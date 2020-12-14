@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Custom Properties */
+
+:root {
+    --leading: 2em;
+}
+
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.hero-bg {
+    background: firebrick url('../images/xmasmacs1.jpg');
+    background-position: 24% 30%;
+    text-align: center;
+    padding-bottom: 18em;
+}
+
+header {
+    padding: 2em 0;
+}
+
+.hero-bg a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.hero-bg a:hover{
+    background-color: rgb(75, 2, 2);
+    border-radius: .3em;
+}
+
+section {
+    margin: 0 1em;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 2em 0 1.2em;
+}
+
+h1 span {
+    text-transform: uppercase;
+    display: block;
+    font-size: ;
+    position: relative;
+    z-index: 1;
+}
+
+h1 span::before {
+    content: '';
+    position: absolute;
+    width: 3.4em;
+    background: maroon;
+    height: .4em;
+    bottom: 0;
+    z-index: -1;
+    margin-left: .5em;
+}
+
+.hero-bg p {
+    font-weight: bold;
+    margin: 0 1em 3em;
+}
+
+.form-container {
+    background-color: white;
+    margin: 2em -1em 0;
+    padding: 2em;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}
+
+input[type=text] {
+    border: 1.5px solid;
+    width: 40%;
+    padding: .5em;
+    box-sizing: border-box;
+    border-radius: .5em;
+    margin-top: 1em;
+}
+
+.form-container p {
+    color:maroon;
+    margin-bottom: 1.5em;
+    font-weight: normal;
+    font-size: .9em;
+    margin-top: .4em;
+}
+
+input[type=button] {
+    background-color: maroon;
+    border: none;
+    width: 40%;
+    color: white;
+    font-weight: bold;
+    padding: .5em 0;
+    border-radius: .5em;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+input[type=button]:hover {
+    background-color: rgb(75, 2, 2);
+}
+
+.Flavors {
+    margin: 0;
+}
+
+.right-col {
+    text-align: center;
+    margin: 3em 1em;
+}
+
+h2 {
+    text-transform: uppercase;
+    position: relative;
+}
+
+img {
+    width: 100%;
+}
+
+p {
+    line-height: var(--leading);
+}
+
+@media (min-width: 730px) {
+    section {
+        margin: 0 13em;
+    }
+}
+
+@media (min-width: 930px) {
+    .hero-bg {
+        text-align: left;
+    }
+
+    .hero-bg p {
+        margin: 0 0 3em;
+    }
+    .hero-bg section {
+        width: 50%;
+    }
+
+    .form-container {
+        margin: 2em 0 0;
+        padding: 2em;
+        border-radius: .5em;
+        box-shadow: 10px 10px 10px rgba(0,0,0,.6);
+    }
+
+    form {
+        display: flex;
+    }
+
+    .form-left {
+        width: 70%;
+    }
+
+    label {
+        margin: 0;
+    }
+
+    input[type="button"] {
+        height: fit-content;
+        font-size: 1.1em;
+        margin-left: 1em;
+        margin-top: 2.2em;
+        padding: .7em 0;
+        width: 30%;
+    }
+
+    .hero-bg p {
+        margin-bottom: 0;
+    }
+
+    section.Flavors {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-areas:
+            "macs content";
+    }
+
+    .right-col {
+        grid-area: content;
+        padding: 0 10%;
+        text-align: left;
+        align-self: center;
+    }
+
+    img {
+        grid-area: macs;
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+}
+
+
+/*Below is utilization animation via css
+Putting in "forwards" means only 1 animation, no loops
+use @keyframes to define your animation
+Use from and to for A to B animations
+Would use percentages for multi-step animations*/
+
+.top {
+    animation: fadeIn 3s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-2em);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
